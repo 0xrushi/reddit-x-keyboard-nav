@@ -2,7 +2,9 @@
 
 **A Chrome extension for seamless keyboard-based browsing on Reddit and Twitter (X), designed for the [ClockworkPi UConsole](https://www.clockworkpi.com/).**  
 
-<!-- ![Demo](https://via.placeholder.com/800x400?text=UConsole+Keyboard+Navigation+Demo) *(Replace with actual screenshot or GIF)*   -->
+![ezgif-42d4dd71cef9dc](https://github.com/user-attachments/assets/b4a0c968-423b-45f1-a4dd-acab4c4ba49b)
+
+
 
 ## 🔥 Features  
 - **Keyboard-Centric Browsing**  
