@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit/X Keyboard Navigation",
+  "version": "1.0",
+  "description": "Browse Reddit/Twitter posts with arrow keys.",
+  "host_permissions": [
+    "https://*.reddit.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.reddit.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
