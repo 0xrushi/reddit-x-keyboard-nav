@@ -4,12 +4,14 @@
   "version": "1.0",
   "description": "Browse Reddit/Twitter posts with arrow keys.",
   "host_permissions": [
-    "https://*.reddit.com/*"
+    "https://*.reddit.com/*",
+    "https://*.x.com/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://www.reddit.com/*"
+        "https://www.reddit.com/*",
+        "https://*.x.com/*"
       ],
       "js": [
         "content.js"

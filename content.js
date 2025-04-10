@@ -24,7 +24,8 @@ document.addEventListener('keydown', function(event) {
       !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
     event.preventDefault();
 
-    const posts = Array.from(document.querySelectorAll('shreddit-post, div[data-testid="post-container"]'));
+    // Updated selector to include X.com articles
+    const posts = Array.from(document.querySelectorAll('shreddit-post, div[data-testid="post-container"], article[data-testid="tweet"]'));
     if (posts.length === 0) return;
 
     // Define the scroll direction: +1 for down, -1 for up.
@@ -49,9 +50,10 @@ document.addEventListener('keydown', function(event) {
         p.style.removeProperty('z-index');
       });
       
-      // Apply new highlight styles to the selected post.
-      post.style.boxShadow = '0 0 0 2px rgba(0, 121, 211, 0.5)';
+      // Updated highlight style to work better with both sites
+      post.style.boxShadow = '0 0 0 2px var(--color-primary, rgba(0, 121, 211, 0.5))';
       post.style.zIndex = '1';
+      post.style.position = 'relative'; // Helps with z-index on X.com
       
       // Option 1: Use scrollIntoView so that the post is centered.
       post.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -72,9 +74,11 @@ document.addEventListener('keydown', function(event) {
 // Function to reset highlights and focused post index.
 function resetHighlights() {
   currentFocusedPostIndex = -1;
-  document.querySelectorAll('shreddit-post, div[data-testid="post-container"]').forEach(post => {
+  // Updated selector to include X.com articles
+  document.querySelectorAll('shreddit-post, div[data-testid="post-container"], article[data-testid="tweet"]').forEach(post => {
     post.style.removeProperty('box-shadow');
     post.style.removeProperty('z-index');
+    post.style.removeProperty('position');
   });
 }
 
